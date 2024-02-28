@@ -5,8 +5,20 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.grey,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.black,
+        title: const Text(
+          "ABOUT ME",
+          style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 3,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -5,8 +5,20 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.blue,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.black,
+        title: const Text(
+          "MY PROJECTS",
+          style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 3,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }

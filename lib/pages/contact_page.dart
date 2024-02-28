@@ -13,6 +13,7 @@ class _ContactPageState extends State<ContactPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: const Text(
           "CONTACT ME",
@@ -28,7 +29,7 @@ class _ContactPageState extends State<ContactPage> {
           child: Column(
             children: [
               const SizedBox(
-                height: 60,
+                height: 45,
               ),
               Image.asset(
                 'assets/images/operator.png',
@@ -37,7 +38,7 @@ class _ContactPageState extends State<ContactPage> {
                 height: 200,
               ),
               const SizedBox(
-                height: 80,
+                height: 45,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -81,6 +82,85 @@ class _ContactPageState extends State<ContactPage> {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                    vertical: 25,
+                  ),
+                ),
+                onPressed: () {
+                  showModalBottomSheet(
+                    backgroundColor: Colors.grey[900],
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Send a message :)",
+                              style: TextStyle(
+                                color: Colors.grey[200],
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            // Add your form or input fields here
+                            TextFormField(
+                              maxLength: 300,
+                              style: TextStyle(
+                                color: Colors.grey[200],
+                              ),
+                              decoration: InputDecoration(
+                                label: Text(
+                                  "Anything but intrusive thoughts...",
+                                  style: TextStyle(
+                                    color: Colors.grey[700],
+                                  ),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              maxLines: 3,
+                            ),
+                            const SizedBox(height: 20),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 30,
+                                  vertical: 20,
+                                ),
+                              ),
+                              child: const Text(
+                                "Send",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: const Text(
+                  "Send a message :)",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
               ),
             ],
           ),

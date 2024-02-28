@@ -5,6 +5,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:portfolio/pages/about_page.dart';
 import 'package:portfolio/pages/contact_page.dart';
 import 'package:portfolio/pages/home_page.dart';
+import 'package:portfolio/pages/lock_screen.dart';
 import 'package:portfolio/pages/projects_page.dart';
 
 void main() {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
     return FlutterWebFrame(
       builder: (context) => const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MainPage(),
+        // home: MainPage(),
+        home: LockScreen(),
       ),
       maximumSize: const Size(500, 500),
       enabled: kIsWeb,
@@ -91,6 +93,7 @@ class _MainPageState extends State<MainPage> {
       ),
       backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: const Text(""),
       ),
