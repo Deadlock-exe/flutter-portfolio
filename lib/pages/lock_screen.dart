@@ -40,6 +40,18 @@ class _LockScreenState extends State<LockScreen> {
             ),
             Expanded(
               child: SlideAction(
+                sliderButtonIcon: Image.asset(
+                  'assets/images/arrow.png',
+                  fit: BoxFit.cover,
+                  width: 23,
+                  height: 23,
+                ),
+                submittedIcon: Image.asset(
+                  'assets/images/check.png',
+                  fit: BoxFit.cover,
+                  width: 23,
+                  height: 23,
+                ),
                 text: "Slide to Unlock",
                 textStyle: const TextStyle(fontSize: 19),
                 alignment: Alignment.bottomCenter,

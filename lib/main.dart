@@ -71,20 +71,44 @@ class _MainPageState extends State<MainPage> {
           tabBackgroundColor: Colors.grey.shade900,
           gap: 8,
           padding: const EdgeInsets.all(15),
-          tabs: const [
+          tabs: [
             GButton(
+              leading: Image.asset(
+                'assets/images/home.png',
+                fit: BoxFit.cover,
+                width: 23,
+                height: 23,
+              ),
               icon: Icons.home,
               text: "HOME",
             ),
             GButton(
+              leading: Image.asset(
+                'assets/images/user.png',
+                fit: BoxFit.cover,
+                width: 23,
+                height: 23,
+              ),
               icon: Icons.person,
               text: "ABOUT",
             ),
             GButton(
+              leading: Image.asset(
+                'assets/images/project.png',
+                fit: BoxFit.cover,
+                width: 23,
+                height: 23,
+              ),
               icon: Icons.work,
               text: "PROJECTS",
             ),
             GButton(
+              leading: Image.asset(
+                'assets/images/message.png',
+                fit: BoxFit.cover,
+                width: 23,
+                height: 18,
+              ),
               icon: Icons.message_sharp,
               text: "CONTACT",
             ),
