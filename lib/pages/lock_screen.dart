@@ -18,10 +18,15 @@ class _LockScreenState extends State<LockScreen> {
     String formattedDate = DateFormat('MMMM d').format(now);
     String formattedTime = DateFormat.Hm().format(now);
 
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: Padding(
-        padding: const EdgeInsets.all(70),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 60,
+          vertical: 50,
+        ),
         child: Column(
           children: [
             Text(
@@ -38,6 +43,12 @@ class _LockScreenState extends State<LockScreen> {
                   fontSize: 75,
                   fontWeight: FontWeight.bold),
             ),
+            Text(
+              "Aditya Gupta",
+              style: TextStyle(
+                color: Colors.grey[500],
+              ),
+            ),
             Expanded(
               child: SlideAction(
                 sliderButtonIcon: Image.asset(
@@ -53,7 +64,9 @@ class _LockScreenState extends State<LockScreen> {
                   height: 23,
                 ),
                 text: "Slide to Unlock",
-                textStyle: const TextStyle(fontSize: 19),
+                textStyle: screenWidth > 600
+                    ? const TextStyle(fontSize: 19)
+                    : const TextStyle(fontSize: 16),
                 alignment: Alignment.bottomCenter,
                 borderRadius: 25,
                 elevation: 0,

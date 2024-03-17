@@ -32,62 +32,106 @@ class _ContactPageState extends State<ContactPage> {
                 height: 45,
               ),
               Image.asset(
-                'assets/images/operator.png',
+                'assets/images/conversation.png',
                 fit: BoxFit.cover,
-                width: 200,
-                height: 200,
+                width: 240,
+                height: 240,
               ),
               const SizedBox(
                 height: 45,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/twitter.png',
-                    fit: BoxFit.cover,
-                    width: 50,
-                    height: 50,
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  const Text(
-                    "@G__aditya",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+              Text(
+                "Feel free to reach out",
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[400],
+                ),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/images/instagram.png',
-                    fit: BoxFit.cover,
-                    width: 50,
-                    height: 50,
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  const Text(
-                    "@g._.adityaa",
-                    style: TextStyle(
-                      color: Colors.white,
+              Center(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      'assets/images/instagram.png',
+                      fit: BoxFit.cover,
+                      width: 40,
+                      height: 40,
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Image.asset(
+                      'assets/images/twitter.png',
+                      fit: BoxFit.cover,
+                      width: 40,
+                      height: 40,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Image.asset(
+                      'assets/images/github.png',
+                      fit: BoxFit.cover,
+                      width: 40,
+                      height: 40,
+                    ),
+                  ],
+                ),
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Image.asset(
+              //       'assets/images/twitter.png',
+              //       fit: BoxFit.cover,
+              //       width: 50,
+              //       height: 50,
+              //     ),
+              //     const SizedBox(
+              //       width: 20,
+              //     ),
+              //     const Text(
+              //       "@G__aditya",
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Image.asset(
+              //       'assets/images/instagram.png',
+              //       fit: BoxFit.cover,
+              //       width: 50,
+              //       height: 50,
+              //     ),
+              //     const SizedBox(
+              //       width: 20,
+              //     ),
+              //     const Text(
+              //       "@g._.adityaa",
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //   ],
+              // ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 25,
                     vertical: 25,
@@ -131,21 +175,26 @@ class _ContactPageState extends State<ContactPage> {
                               ),
                               maxLines: 3,
                             ),
-                            const SizedBox(height: 20),
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              style: ElevatedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 30,
-                                  vertical: 20,
+                            Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 30,
+                                    vertical: 20,
+                                  ),
                                 ),
-                              ),
-                              child: const Text(
-                                "Send",
-                                style: TextStyle(
-                                  color: Colors.black,
+                                child: const Text(
+                                  "Send",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ),
                             ),
