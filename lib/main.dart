@@ -119,6 +119,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
+        toolbarHeight: 20,
         title: const Text(""),
       ),
       body: _pages[_selectedIndex],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:portfolio/components/expanded_container.dart';
 
 class AboutPage extends StatelessWidget {
@@ -7,11 +6,14 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
+        centerTitle: true,
         title: const Text(
           "ABOUT ME",
           style: TextStyle(
@@ -23,9 +25,9 @@ class AboutPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 40,
-            vertical: 30,
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth < 500 ? 0 : 40,
+            vertical: 40,
           ),
           child: Center(
             child: Column(
@@ -40,7 +42,7 @@ class AboutPage extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 25,
+                    vertical: 30,
                   ),
                   child: Image.asset(
                     "assets/images/webdev.png",

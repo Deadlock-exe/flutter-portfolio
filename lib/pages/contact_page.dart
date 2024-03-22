@@ -15,6 +15,7 @@ class _ContactPageState extends State<ContactPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
+        centerTitle: true,
         title: const Text(
           "CONTACT ME",
           style: TextStyle(
@@ -38,7 +39,7 @@ class _ContactPageState extends State<ContactPage> {
                 height: 240,
               ),
               const SizedBox(
-                height: 45,
+                height: 60,
               ),
               Text(
                 "Feel free to reach out",
@@ -48,7 +49,7 @@ class _ContactPageState extends State<ContactPage> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               Center(
                 child: Row(

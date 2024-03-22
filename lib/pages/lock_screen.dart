@@ -63,7 +63,7 @@ class _LockScreenState extends State<LockScreen> {
                   width: 23,
                   height: 23,
                 ),
-                text: "Slide to Unlock",
+                text: "      Slide to Unlock",
                 textStyle: screenWidth > 600
                     ? const TextStyle(fontSize: 19)
                     : const TextStyle(fontSize: 16),

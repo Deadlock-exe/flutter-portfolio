@@ -5,11 +5,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
+        centerTitle: true,
         title: const Text(
           "HOMEPAGE",
           style: TextStyle(
@@ -21,8 +24,8 @@ class HomePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 80,
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth < 500 ? 10 : 40,
             vertical: 40,
           ),
           child: Column(
@@ -32,6 +35,8 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                   child: Image.asset(
                     "assets/images/trial.png",
+                    height: screenWidth > 500 ? 350 : screenWidth - 50,
+                    width: screenWidth > 500 ? 350 : screenWidth - 50,
                   ),
                 ),
               ),
@@ -73,7 +78,11 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Image.asset("assets/images/code.png"),
+              Image.asset(
+                "assets/images/code.png",
+                height: 250,
+                width: 250,
+              ),
               const SizedBox(
                 height: 10,
               ),
