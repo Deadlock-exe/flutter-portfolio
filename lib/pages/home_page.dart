@@ -25,18 +25,18 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: screenWidth < 500 ? 10 : 40,
+            horizontal: screenWidth < 800 ? 10 : 40,
             vertical: 40,
           ),
           child: Column(
             children: [
               Center(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
+                  borderRadius: BorderRadius.circular(2500),
                   child: Image.asset(
                     "assets/images/trial.png",
-                    height: screenWidth > 500 ? 350 : screenWidth - 50,
-                    width: screenWidth > 500 ? 350 : screenWidth - 50,
+                    height: screenWidth > 400 ? 320 : screenWidth - 50,
+                    width: screenWidth > 400 ? 320 : screenWidth - 50,
                   ),
                 ),
               ),

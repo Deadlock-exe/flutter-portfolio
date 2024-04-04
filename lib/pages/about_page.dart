@@ -6,8 +6,6 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -25,8 +23,8 @@ class AboutPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: screenWidth < 500 ? 0 : 40,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
             vertical: 40,
           ),
           child: Center(
@@ -131,7 +129,7 @@ class AboutPage extends StatelessWidget {
                       children: [
                         ExpandedContainer(text: "Canva"),
                         ExpandedContainer(text: "Figma"),
-                        ExpandedContainer(text: "Final Cut Pro"),
+                        ExpandedContainer(text: "FinalCut Pro"),
                       ],
                     ),
                   ],

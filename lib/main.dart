@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         // home: MainPage(),
         home: LockScreen(),
       ),
-      maximumSize: const Size(500, 500),
+      maximumSize: const Size(520, 520),
       enabled: kIsWeb,
       backgroundColor: Colors.black,
     );
@@ -119,7 +119,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
-        toolbarHeight: 20,
+        toolbarHeight: 25,
         title: const Text(""),
       ),
       body: _pages[_selectedIndex],
