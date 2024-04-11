@@ -25,16 +25,28 @@ class ProjectsPage extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(
-            height: 40,
+            height: 60,
           ),
           Center(
-            child: Text(
-              "Web Development Projects",
-              style: TextStyle(
-                color: Colors.grey[400],
-                fontSize: 17,
-                letterSpacing: 1,
-              ),
+            child: Column(
+              children: [
+                Text(
+                  "Web Development Projects",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 17,
+                    letterSpacing: 1,
+                  ),
+                ),
+                Text(
+                  "(swipe to see more)",
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 16,
+                    fontWeight: FontWeight.w100,
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(
@@ -50,16 +62,28 @@ class ProjectsPage extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 80,
+            height: 100,
           ),
           Center(
-            child: Text(
-              "App Development Projects",
-              style: TextStyle(
-                color: Colors.grey[400],
-                fontSize: 17,
-                letterSpacing: 1,
-              ),
+            child: Column(
+              children: [
+                Text(
+                  "App Development Projects",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 17,
+                    letterSpacing: 1,
+                  ),
+                ),
+                Text(
+                  "(swipe to see more)",
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 16,
+                    fontWeight: FontWeight.w100,
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(

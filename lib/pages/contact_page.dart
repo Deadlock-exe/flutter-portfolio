@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/util/email_service.dart';
+import 'package:portfolio/util/url_launcher.dart';
 
 class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
@@ -8,6 +10,10 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
+  EmailService emailService = EmailService();
+
+  final TextEditingController _messageController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,29 +61,50 @@ class _ContactPageState extends State<ContactPage> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(
-                      'assets/images/instagram.png',
-                      fit: BoxFit.cover,
-                      width: 40,
-                      height: 40,
+                    GestureDetector(
+                      onTap: () {
+                        final Uri url =
+                            Uri.parse('https://instagram.com/g._.adityaa');
+                        launchMyUrl(url);
+                      },
+                      child: Image.asset(
+                        'assets/images/instagram.png',
+                        fit: BoxFit.cover,
+                        width: 40,
+                        height: 40,
+                      ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Image.asset(
-                      'assets/images/twitter.png',
-                      fit: BoxFit.cover,
-                      width: 40,
-                      height: 40,
+                    GestureDetector(
+                      onTap: () {
+                        final Uri url =
+                            Uri.parse('https://twitter.com/G__aditya');
+                        launchMyUrl(url);
+                      },
+                      child: Image.asset(
+                        'assets/images/twitter.png',
+                        fit: BoxFit.cover,
+                        width: 40,
+                        height: 40,
+                      ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Image.asset(
-                      'assets/images/github.png',
-                      fit: BoxFit.cover,
-                      width: 40,
-                      height: 40,
+                    GestureDetector(
+                      onTap: () {
+                        final Uri url =
+                            Uri.parse('https://github.com/Deadlock-exe');
+                        launchMyUrl(url);
+                      },
+                      child: Image.asset(
+                        'assets/images/github.png',
+                        fit: BoxFit.cover,
+                        width: 40,
+                        height: 40,
+                      ),
                     ),
                   ],
                 ),
@@ -159,6 +186,7 @@ class _ContactPageState extends State<ContactPage> {
                             const SizedBox(height: 20),
                             // Add your form or input fields here
                             TextFormField(
+                              controller: _messageController,
                               maxLength: 300,
                               style: TextStyle(
                                 color: Colors.grey[200],
@@ -179,7 +207,21 @@ class _ContactPageState extends State<ContactPage> {
                             Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: ElevatedButton(
-                                onPressed: () {
+                                onPressed: () async {
+                                  // Retrieve the text from the TextFormField
+                                  String message = _messageController.text;
+
+                                  // Check if the message is not empty before sending
+                                  if (message.isNotEmpty) {
+                                    await emailService.sendMyEmail(
+                                      "shadowfox10082004@gmail.com",
+                                      "Anonymous portfolio message",
+                                      message, // Pass the retrieved message
+                                    );
+                                    print(message);
+                                  }
+                                  _messageController.clear();
+                                  // ignore: use_build_context_synchronously
                                   Navigator.pop(context);
                                 },
                                 style: ElevatedButton.styleFrom(

@@ -31,6 +31,37 @@ class AboutPage extends StatelessWidget {
             child: Column(
               children: [
                 Text(
+                  "Pogramming Skills",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 17,
+                    letterSpacing: 1,
+                  ),
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 40,
+                      ),
+                      child: Image.asset(
+                        "assets/images/programming.png",
+                        height: 130,
+                      ),
+                    ),
+                    const Row(
+                      children: [
+                        ExpandedContainer(text: "C"),
+                        ExpandedContainer(text: "C++"),
+                        ExpandedContainer(text: "Python"),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                Text(
                   "Web Development Skills",
                   style: TextStyle(
                     color: Colors.grey[400],
@@ -130,6 +161,37 @@ class AboutPage extends StatelessWidget {
                         ExpandedContainer(text: "Canva"),
                         ExpandedContainer(text: "Figma"),
                         ExpandedContainer(text: "FinalCut Pro"),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                Text(
+                  "Platform Skills",
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 17,
+                    letterSpacing: 1,
+                  ),
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 25,
+                      ),
+                      child: Image.asset(
+                        "assets/images/platform.png",
+                        height: 130,
+                      ),
+                    ),
+                    const Row(
+                      children: [
+                        ExpandedContainer(text: "Github"),
+                        ExpandedContainer(text: "Vercel"),
+                        ExpandedContainer(text: "AWS"),
                       ],
                     ),
                   ],
