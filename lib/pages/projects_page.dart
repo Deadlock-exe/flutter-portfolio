@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:portfolio/components/appdev_projects.dart';
 import 'package:portfolio/components/webdev_projects.dart';
 
 class ProjectsPage extends StatelessWidget {
@@ -90,12 +91,12 @@ class ProjectsPage extends StatelessWidget {
             height: 20,
           ),
           SizedBox(
-            height: 270,
+            height: 400,
             child: CardSwiper(
-              cardsCount: webdev.length,
+              cardsCount: appdev.length,
               cardBuilder:
                   (context, index, percentThresholdX, percentThresholdY) =>
-                      webdev[index],
+                      appdev[index],
             ),
           ),
         ],
