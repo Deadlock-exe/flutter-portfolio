@@ -26,7 +26,7 @@ class ProjectsPage extends StatelessWidget {
       body: ListView(
         children: [
           const SizedBox(
-            height: 60,
+            height: 30,
           ),
           Center(
             child: Column(

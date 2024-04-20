@@ -24,7 +24,7 @@ class _LockScreenState extends State<LockScreen> {
       backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 60,
+          horizontal: 50,
           vertical: 50,
         ),
         child: Column(

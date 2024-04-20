@@ -1,3 +1,4 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_frame/flutter_web_frame.dart';
@@ -10,7 +11,25 @@ import 'package:portfolio/pages/projects_page.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 450) {
+            return Directionality(
+              textDirection: TextDirection.ltr,
+              child: DeviceFrame(
+                device: Devices.ios.iPhone13,
+                orientation: Orientation.portrait,
+                screen: const MyApp(),
+              ),
+            );
+          } else {
+            return const MyApp();
+          }
+        },
+      ),
+    ),
   );
 }
 
@@ -25,7 +44,7 @@ class MyApp extends StatelessWidget {
         // home: MainPage(),
         home: LockScreen(),
       ),
-      maximumSize: const Size(520, 520),
+      maximumSize: const Size(330, 330),
       enabled: kIsWeb,
       backgroundColor: Colors.black,
     );
@@ -60,7 +79,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 25,
+          horizontal: 10,
           vertical: 20,
         ),
         child: GNav(
@@ -69,7 +88,7 @@ class _MainPageState extends State<MainPage> {
           color: Colors.white,
           activeColor: Colors.white,
           tabBackgroundColor: Colors.grey.shade900,
-          gap: 8,
+          gap: 3,
           padding: const EdgeInsets.all(15),
           tabs: [
             GButton(
@@ -119,7 +138,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
-        toolbarHeight: 25,
+        toolbarHeight: 35,
         title: const Text(""),
       ),
       body: _pages[_selectedIndex],

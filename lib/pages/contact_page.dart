@@ -36,13 +36,13 @@ class _ContactPageState extends State<ContactPage> {
           child: Column(
             children: [
               const SizedBox(
-                height: 45,
+                height: 40,
               ),
               Image.asset(
                 'assets/images/conversation.png',
                 fit: BoxFit.cover,
-                width: 240,
-                height: 240,
+                width: 220,
+                height: 220,
               ),
               const SizedBox(
                 height: 60,
