@@ -14,7 +14,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
     return GNav(
       color: Colors.white,
       activeColor: Colors.white,
-      tabBackgroundColor: Colors.grey.shade900,
+      tabBackgroundColor: Colors.transparent,
       gap: 8,
       padding: const EdgeInsets.all(15),
       tabs: const [

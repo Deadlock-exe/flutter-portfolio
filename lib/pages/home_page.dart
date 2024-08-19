@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      // extendBody: true,
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
